@@ -1,0 +1,27 @@
+{
+  "stopIDs": [
+    1787,
+    1737
+  ],
+  "routeIDs": [
+    "03",
+    "04",
+    "06",
+    "15",
+    "38",
+    "57",
+    "58"
+  ],
+  "destinations": [
+    "WTP",
+    "E Towne",
+    "E Towne:Hayes",
+    "McKee Rd",
+    "Mc Kee:West TP",
+    "Greentree",
+    "East TP",
+    "NTP",
+    "North TP",
+    "PFLAUM RD"  ]
+}
+

@@ -1,0 +1,25 @@
+$title-color:       rgba(255, 255, 255, 0.7);
+
+.widget-sms-my-bus {
+  .title {
+    color: $title-color;
+  }
+
+  .arrivals-for-stop {
+    list-style: none;
+  }
+
+  .routeID, .destination {
+    color: $title-color;
+  }
+
+  .stop {
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid $title-color;
+  }
+
+  .more-info {
+    margin-top: 10px;
+  }
+}

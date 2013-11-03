@@ -20,6 +20,9 @@ gem "travis"
 gem 'nokogiri'
 gem 'htmlentities'
 
+## Sms_my_bus (Madison Bus data API)
+gem 'sms_my_bus'
+
 ### development niceties ###
 gem 'dotenv'
 gem 'pry'
