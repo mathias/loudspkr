@@ -17,5 +17,5 @@ SCHEDULER.every '30m', :first_in => '5s' do |job|
   team_size = status['size']
   moreinfo = name + ", currently at " + team_size.to_s + " members. (Lower is better.)"
 
-  send_event("coderwall", {title: "Coderwall Rank", current: rank, moreinfo: moreinfo})
+  send_event("coderwall", { title: "Coderwall Rank", current: rank, moreinfo: moreinfo })
 end
