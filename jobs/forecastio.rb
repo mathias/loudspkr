@@ -38,7 +38,7 @@ SCHEDULER.every '10m', :first_in => 0 do |job|
   response = http.request(Net::HTTP::Get.new("/forecast/#{forecast_api_key}/#{forecast_location_lat},#{forecast_location_long}?units=#{forecast_units}"))
   forecast = JSON.parse(response.body)
 
-  raise "Verbinski: " + forecast["error"] if forecast.has_key?("error")
+  raise "Forecast.io: " + forecast["error"] if forecast.has_key?("error")
 
   currently = forecast["currently"] || {}
   current = {
@@ -72,10 +72,16 @@ SCHEDULER.every '10m', :first_in => 0 do |job|
     this_week.push(this_day)
   end
 
-  send_event('verbinski', {
-    current: current,
+  send_event('weather_now', {
+    current: current
+  })
+
+  send_event('weather_today', {
     today: today,
-    upcoming_week: this_week,
+  })
+
+  send_event('weather_week', {
+    upcoming_week: this_week
   })
 end
 

@@ -1,8 +1,16 @@
 <% content_for :title do %>My super sweet dashboard<% end %>
 <div class="gridster">
   <ul>
-    <li data-row="1" data-col="1" data-sizex="3" data-sizey="1">
-      <div data-id="verbinski" data-view="Verbinski"></div>
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="weather_now" data-view="WeatherNow" data-bind-class="right_now_bg"></div>
+    </li>
+
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="weather_today" data-view="WeatherToday" data-bind-class="today_bg"></div>
+    </li>
+
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="weather_week" data-view="WeatherWeek" data-bind-class="this_week_bg"></div>
     </li>
 
     <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">

@@ -1,0 +1,21 @@
+<h3 class="title">Right now</h3>
+<h2 class="temp" data-bind="current.temperature | append '&deg;' | raw"></h2>
+
+<div class="summary-wrapper clearfix">
+  <img class="weather-icon-left" data-bind-src="current_icon" />
+  <p class="summary summary-right" data-bind="current.summary | raw"></p>
+</div>
+
+<div class="details-text-only">
+  <p>
+    <span>Humidity: </span>
+    <span data-bind="current.humidity | raw"></span>
+  </p>
+
+  <p>
+    <span>Wind: </span>
+    <span data-bind="wind_bearing"></span>
+    <span data-bind="current.wind_speed | raw"></span>
+    <span> mph </span>
+  </p>
+</div>
