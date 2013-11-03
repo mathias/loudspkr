@@ -10,18 +10,23 @@ $moreinfo-color:    rgba(255, 255, 255, 0.7);;
 // ----------------------------------------------------------------------------
 // Widget-heroku styles
 // ----------------------------------------------------------------------------
-.widget-heroku { 
+.widget-heroku {
+  img {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    opacity: 0.05;
+  }
 
-  background-image: url('/assets/traffic_light_green.png');
   background-color: $background-color;
   background-repeat: no-repeat;
   background-position: center center;
-  
+
   .heroku-info {
     margin-top: -170px;
   }
 
-  .title { 
+  .title {
     color: $title-color;
   }
 
@@ -44,5 +49,5 @@ $moreinfo-color:    rgba(255, 255, 255, 0.7);;
   .updated-at {
     color: rgba(0, 0, 0, 0.3);
   }
-  
+
 }
