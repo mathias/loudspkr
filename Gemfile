@@ -16,6 +16,10 @@ gem 'httparty'
 ## Travis-CI widget:
 gem "travis"
 
+## RSS feed widget:
+gem 'nokogiri'
+gem 'htmlentities'
+
 ### development niceties ###
 gem 'dotenv'
 gem 'pry'
