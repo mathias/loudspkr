@@ -18,7 +18,7 @@
         <span>Wind: </span>
         <span data-bind="wind_bearing"></span>
         <span data-bind="current.wind_speed | raw"></span>
-        <span> km/h </span>
+        <span> mph </span>
       </p>
     </div>
   </div>
@@ -36,10 +36,10 @@
     <div class="details-text-only">
       <p>
         <span>L&thinsp;: </span>
-        <span data-bind="today.low | append '&deg;C' | raw"></span>
+        <span data-bind="today.low | append '&deg;F' | raw"></span>
         <span> | </span>
         <span>H&thinsp;: </span>
-        <span data-bind="today.high | append '&deg;C' | raw"></span>
+        <span data-bind="today.high | append '&deg;F' | raw"></span>
       </p>
     </div>
 
