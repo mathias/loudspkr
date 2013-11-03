@@ -8,7 +8,7 @@ SCHEDULER.every '5m', :first_in => '5s' do |job|
   request = Net::HTTP::Get.new(uri.request_uri)
   response = http.request(request)
   status = JSON.parse(response.body)
-  
+
   prod_status = status['status']['Production']
   dev_status = status['status']['Development']
   issue_count = status['issues'].size.to_i
