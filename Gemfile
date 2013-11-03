@@ -13,6 +13,9 @@ gem 'twitter'
 ## GitHub Status widget:
 gem 'httparty'
 
+## Travis-CI widget:
+gem "travis"
+
 ### development niceties ###
 gem 'dotenv'
 gem 'pry'
