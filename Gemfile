@@ -6,3 +6,6 @@ gem 'dashing'
 gem 'twitter'
 
 gem 'dotenv'
+
+gem 'pry'
+gem 'pry-debugger'
