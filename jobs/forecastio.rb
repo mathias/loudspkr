@@ -50,11 +50,11 @@ SCHEDULER.every '10m', :first_in => 0 do |job|
     icon: currently["icon"]
   }
 
-  daily = forecast["daily"]["data"][0]
+  daily = forecast["daily"]["data"][0] || {}
   today = {
     summary: forecast["hourly"]["summary"],
-    high: daily["temperatureMax"].round,
-    low: daily["temperatureMin"].round,
+    high: daily.fetch("temperatureMax", 0).round,
+    low: daily.fetch("temperatureMin", 0).round,
     sunrise: time_to_str_minutes(daily["sunriseTime"]),
     sunset: time_to_str_minutes(daily["sunsetTime"]),
     icon: daily["icon"]
@@ -62,10 +62,10 @@ SCHEDULER.every '10m', :first_in => 0 do |job|
 
   this_week = []
   for day in (1..7)
-    day = forecast["daily"]["data"][day]
+    day = forecast["daily"]["data"][day] || {}
     this_day = {
-      max_temp: day["temperatureMax"].round,
-      min_temp: day["temperatureMin"].round,
+      max_temp: day.fetch("temperatureMax", 0).round,
+      min_temp: day.fetch("temperatureMin", 0).round,
       time: day_to_str(day["time"]),
       icon: day["icon"]
     }
