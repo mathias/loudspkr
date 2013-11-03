@@ -2,10 +2,15 @@ source 'https://rubygems.org'
 
 gem 'dashing'
 
-## Remove this if you don't need a twitter widget.
+### WIDGET GEMS ###
+
+## Twitter widget:
 gem 'twitter'
 
-gem 'dotenv'
+## GitHub Status widget:
+gem 'httparty'
 
+### development niceties ###
+gem 'dotenv'
 gem 'pry'
 gem 'pry-debugger'

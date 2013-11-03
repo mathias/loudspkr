@@ -32,8 +32,13 @@ GEM
     faraday (0.8.8)
       multipart-post (~> 1.2.0)
     hike (1.2.3)
+    httparty (0.12.0)
+      json (~> 1.8)
+      multi_xml (>= 0.5.2)
+    json (1.8.1)
     method_source (0.8.2)
     multi_json (1.8.2)
+    multi_xml (0.5.5)
     multipart-post (1.2.0)
     pry (0.9.12.2)
       coderay (~> 1.0.5)
@@ -89,6 +94,7 @@ PLATFORMS
 DEPENDENCIES
   dashing
   dotenv
+  httparty
   pry
   pry-debugger
   twitter
