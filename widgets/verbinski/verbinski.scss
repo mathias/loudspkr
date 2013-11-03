@@ -1,0 +1,114 @@
+// ----------------------------------------------------------------------------
+// Sass declarations
+// ----------------------------------------------------------------------------
+
+// text colour
+$full-colour:  rgba(255, 255, 255, 1);
+$light-colour: rgba(255, 255, 255, 0.7);
+$dark-colour: rgba(0, 0, 0, 0.3);
+
+// text sizes
+$info: 18px;
+$info-small: 16px;
+
+// column colours
+$cold5: #173A7F; // -20 and under
+$cold4: #1E4BA6; // -19 to -11
+$cold3: #2358C2; // -10 to -1
+$cold2: #2863DB; // 0 to 4
+$cold1: #2F74FF; // 5 to 9
+$cool2: #25D6A4; // 10 to 14
+$cool1: #B9CC5A; // 15 to 19
+$warm: #ff9d37;// 20 to 24
+$hot: #ff5131; // 25 and above 
+
+
+// ----------------------------------------------------------------------------
+// Widget-verbinski styles
+// ----------------------------------------------------------------------------
+.widget-verbinski {
+
+  .cold5 { background-color: $cold5; } 
+  .cold4 { background-color: $cold4; }
+  .cold3 { background-color: $cold3; }
+  .cold2 { background-color: $cold2; }
+  .cold1 { background-color: $cold1; }
+  .cool2 { background-color: $cool2; }
+  .cool1 { background-color: $cool1; }
+  .warm { background-color: $warm; }
+  .hot { background-color: $hot; }
+
+  #right-now, #today, #this-week {
+    float: left;
+    width: 33%;
+    height: 100%;
+
+    .column-inner {
+      padding: 20px 30px;
+
+      .title { 
+        color: $light-colour; 
+        text-transform: uppercase;
+      }
+
+      .temp { color: $full-colour; }
+
+      .summary { 
+        color: $full-colour; 
+        text-align: left;
+      }
+
+      // icon + summary
+      .summary-wrapper {
+        display: table;
+        margin: 0 10px;
+
+        .weather-icon-left {
+          max-width: none;
+          padding: -10px;
+        }
+
+        .summary-right {
+          display: table-cell;
+          vertical-align: middle;
+          font-size: $info;
+        }
+      }
+
+      .details-text-only { 
+        font-size: $info; 
+        margin-top: 10px;
+      }
+
+      .upcoming-week {
+        margin: 15px 0 15px 50px;
+        text-align: left; 
+
+        p { 
+          font-size: $info;
+          margin: -5px 0;
+
+          .weather-icon-inline {
+            max-width: 50px;
+            margin: -5px;
+          }
+          .weather-icon-inline.large {
+            max-width: 60px;
+            margin: -10px;
+          }
+        }
+      }
+
+      .powered-by { 
+        margin-top: 20px;
+        color: $light-colour; 
+        font-size: $info-small;
+      }
+      .last-updated {
+        font-size: $info-small;
+        color: $dark-colour;
+      }
+    }
+  } 
+}
+

@@ -1,0 +1,78 @@
+<div id="right-now" data-bind-class="right_now"> 
+  <div class="column-inner column-left">
+    <h3 class="title">Right now</h3>
+    <h2 class="temp" data-bind="current.temperature | append '&deg;' | raw"></h2>
+
+    <div class="summary-wrapper clearfix">
+      <img class="weather-icon-left" data-bind-src="current_icon" />
+      <p class="summary summary-right" data-bind="current.summary | raw"></p>
+    </div>
+
+    <div class="details-text-only">
+      <p>
+        <span>Humidity: </span>
+        <span data-bind="current.humidity | raw"></span>
+      </p>
+
+      <p>
+        <span>Wind: </span>
+        <span data-bind="wind_bearing"></span>
+        <span data-bind="current.wind_speed | raw"></span>
+        <span> km/h </span>
+      </p>
+    </div>
+  </div>
+</div>
+
+<div id="today" data-bind-class="today_bg">
+  <div class="column-inner column-middle">
+    <h3 class="title">Today</h3>
+
+    <div class="summary-wrapper clearfix">
+      <img class="weather-icon-left" data-bind-src="day_icon" />
+      <p class="summary summary-right" data-bind="today.summary"></p>
+    </div>
+
+    <div class="details-text-only">
+      <p>
+        <span>L&thinsp;: </span>
+        <span data-bind="today.low | append '&deg;C' | raw"></span>
+        <span> | </span>
+        <span>H&thinsp;: </span>
+        <span data-bind="today.high | append '&deg;C' | raw"></span>
+      </p>
+    </div>
+
+    <div class="details-text-only">
+      <p>
+        <span>Sunrise: </span><span data-bind="today.sunrise"></span>
+      </p>
+      <p>
+        <span>Sunset: </span><span data-bind="today.sunset"></span>
+      </p>
+    </div>
+
+    <p class="powered-by">Powered by Forecast.io</p>
+    <p class="last-updated">
+      <span>Last updated: </span>
+      <span data-bind="last_updated"></span>
+    </p>
+  </div>
+
+</div>
+
+
+<div id="this-week" data-bind-class="this_week_bg">
+  <div class="column-inner column-right">
+    <h3 class="title">This week</h3>
+    <div class="upcoming-week">
+      <p data-foreach-day="this_week">
+        <span data-bind="day.time"></span>:
+        <span data-bind="day.min_temp | raw"></span> -
+        <span data-bind="day.max_temp | raw"></span>
+        <img class="weather-icon-inline" data-bind-src="day.icon" />
+      </p>
+    </div>
+  </div>
+</div>
+
