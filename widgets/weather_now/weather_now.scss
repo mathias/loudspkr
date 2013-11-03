@@ -11,31 +11,9 @@ $dark-colour: rgba(0, 0, 0, 0.3);
 $info: 18px;
 $info-small: 16px;
 
-// column colours
-$cold5: #173A7F; // -20 and under
-$cold4: #1E4BA6; // -19 to -11
-$cold3: #2358C2; // -10 to -1
-$cold2: #2863DB; // 0 to 4
-$cold1: #2F74FF; // 5 to 9
-$cool2: #25D6A4; // 10 to 14
-$cool1: #B9CC5A; // 15 to 19
-$warm: #ff9d37;// 20 to 24
-$hot: #ff5131; // 25 and above
-
-
 // ----------------------------------------------------------------------------
 // Widget-verbinski styles
 // ----------------------------------------------------------------------------
-.cold5 { background-color: $cold5; }
-.cold4 { background-color: $cold4; }
-.cold3 { background-color: $cold3; }
-.cold2 { background-color: $cold2; }
-.cold1 { background-color: $cold1; }
-.cool2 { background-color: $cool2; }
-.cool1 { background-color: $cool1; }
-.warm { background-color: $warm; }
-.hot { background-color: $hot; }
-
 .widget-weather-now {
   .title {
     color: $light-colour;
