@@ -23,6 +23,9 @@ gem 'htmlentities'
 ## Sms_my_bus (Madison Bus data API)
 gem 'sms_my_bus'
 
+## Trello widget
+gem 'ruby-trello'
+
 ### development niceties ###
 gem 'dotenv'
 gem 'pry'
