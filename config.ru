@@ -1,7 +1,10 @@
 require 'dashing'
 
+require 'dotenv'
+Dotenv.load
+
 configure do
-  set :auth_token, 'YOUR_AUTH_TOKEN'
+  set :auth_token, ENV['AUTH_TOKEN']
 
   helpers do
     def protected!
