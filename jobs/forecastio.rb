@@ -72,16 +72,6 @@ SCHEDULER.every '10m', :first_in => 0 do |job|
     this_week.push(this_day)
   end
 
-  send_event('weather_now', {
-    current: current
-  })
-
-  send_event('weather_today', {
-    today: today,
-  })
-
-  send_event('weather_week', {
-    upcoming_week: this_week
-  })
+  send_event('weather', { current: current, today: today, upcoming_week: this_week })
 end
 
