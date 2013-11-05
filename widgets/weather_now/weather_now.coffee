@@ -6,6 +6,7 @@ class Dashing.WeatherNow extends Dashing.Widget
     # This is fired when the widget is done being rendered
 
   onData: (data) ->
+    console.log data
     # Handle incoming data
     @currentBg(@get('current.temperature'))
     @getWindDirection(@get('current.wind_bearing'))

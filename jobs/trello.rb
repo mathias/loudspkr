@@ -12,6 +12,7 @@ end
 
 boards = {
   "the-board" => "twZpiqQP",
+  "glynnis-s-apprenticeship-storycards" => "gPrDal4a"
 }
 
 class MyTrello
