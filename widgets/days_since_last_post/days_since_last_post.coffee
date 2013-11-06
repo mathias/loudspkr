@@ -18,7 +18,7 @@ class Dashing.DaysSinceLastPost extends Dashing.Widget
     difference_in_days = moment().diff(updatedAt, 'days')
     console.log difference_in_days
 
-    if difference_in_days >= 30
+    if difference_in_days > 7
       @set 'overdue_bg', 'overdue'
     else
       @set 'overdue_bg', 'normal'
