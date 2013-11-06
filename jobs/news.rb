@@ -35,11 +35,11 @@ class News
       updated_at = clean_html(news_item.css('updated').children.first.text)
 
       news_headlines.push({
-        title: title,
-        description: description,
-        author: author,
-        published_at: published_at,
-        updated_at: updated_at
+        title: title.to_s,
+        description: description.to_s,
+        author: author.to_s,
+        published_at: published_at.to_s,
+        updated_at: updated_at.to_s,
       })
     end
 
