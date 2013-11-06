@@ -1,4 +1,6 @@
 class Dashing.Comments extends Dashing.Widget
+  @accessor 'date', ->
+    moment(@get('current_comment')?.created_at).fromNow()
 
   @accessor 'quote', ->
     "“#{@get('current_comment')?.body}”"
