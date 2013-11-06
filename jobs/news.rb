@@ -28,10 +28,10 @@ class News
 
     news_headlines = [];
     doc.css('entry').each do |news_item|
-      title = clean_html( news_item.css('title').text )
-      description = clean_html( news_item.css('content').text ).slice(0, 256)
-      author = clean_html( news_item.css('author').text )
-      published_at = clean_html( news_item.css('published').text )
+      title = clean_html(news_item.css('title').text)
+      description = clean_html(news_item.css('content').text)
+      author = clean_html(news_item.css('author').text)
+      published_at = clean_html(news_item.css('published').text)
       updated_at = clean_html(news_item.css('updated').children.first.text)
 
       news_headlines.push({
