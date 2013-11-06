@@ -16,6 +16,8 @@ $info-small: 16px;
 // ----------------------------------------------------------------------------
 .widget-weather {
   padding: 0 !important;
+  max-height: 340px; // CHANGE ME IF THE WIDGET SIZES CHANGES
+  overflow: hidden;
 
   #current, #today, #week {
     height: 100%;
