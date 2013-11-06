@@ -1,0 +1,30 @@
+$title-color:       rgba(255, 255, 255, 0.7);
+$background-color: #44a340;
+$overdue-background-color: #ff5131; // More than a month ago
+
+.widget-days-since-last-post {
+  padding: 0 !important;
+  .normal, .overdue {
+    height: 100%;
+
+    padding: 25px 12px;
+  }
+
+  .normal {
+    background-color: $background-color;
+  }
+
+  .overdue {
+    background-color: $overdue-background-color;
+  }
+
+  h3.title {
+    padding-bottom: 20px;
+    color: $title-color;
+  }
+
+  h1.days_ago {
+    font-size: 55px;
+    font-weight: bold;
+  }
+}
