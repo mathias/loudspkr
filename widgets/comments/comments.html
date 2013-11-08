@@ -1,7 +1,8 @@
 <h1 class="title" data-bind="title"></h1>
 <div class="comment-container">
-  <h3><img data-bind-src='current_comment.avatar'/><span data-bind='current_comment.name' class="name"></span></h3>
   <p class="comment" data-bind='quote'></p>
+  <h3><img data-bind-src='current_comment.avatar'/><span data-bind='current_comment.screen_name | prepend "@"' class="screen_name"></span></h3>
+  <h3><span data-bind='current_comment.name' class="name"></span></h3>
 </div>
 <p class="more-info" data-bind="date"></p>
 <p class="more-info" data-bind="moreinfo"></p>

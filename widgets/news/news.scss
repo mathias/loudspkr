@@ -11,7 +11,8 @@ $moreinfo-color:    rgba(255, 255, 255, 0.8);;
 // Widget-weather styles
 // ----------------------------------------------------------------------------
 .widget-news {
-
+  display: block;
+  overflow: hidden;
   background-color: $background-color;
   vertical-align: baseline !important;
 
@@ -22,6 +23,7 @@ $moreinfo-color:    rgba(255, 255, 255, 0.8);;
   }
 
   .headline-container {
+    max-height: 340px; // CHANGE THIS WHEN WIDGET SIZE CHANGES;
     display: none;
   }
 
@@ -34,4 +36,7 @@ $moreinfo-color:    rgba(255, 255, 255, 0.8);;
     color: black;
   }
 
+  .author {
+    margin-top: 20px;
+  }
 }

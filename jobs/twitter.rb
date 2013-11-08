@@ -22,6 +22,7 @@ SCHEDULER.every '10m', :first_in => 0 do |job|
       tweets.map! do |tweet|
         {
           name: tweet.user.name,
+          screen_name: tweet.user.screen_name,
           body: tweet.text,
           avatar: tweet.user.profile_image_url_https,
           created_at: tweet.created_at

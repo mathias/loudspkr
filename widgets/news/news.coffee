@@ -8,6 +8,7 @@ class Dashing.News extends Dashing.Widget
 
   onData: (data) ->
     @currentIndex = 0
+    @set 'current_headline', @get('headlines')[@currentIndex]
 
   startCarousel: ->
     interval = $(@node).attr('data-interval')
