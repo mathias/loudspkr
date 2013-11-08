@@ -1,0 +1,28 @@
+$background-color: #A6C700;
+$aux-info-color: rgba(255, 255, 255, 0.7);
+$moreinfo-color: rgba(255, 255, 255, 0.7);
+$updated-at-color: rgba(255, 255, 255, 0.7);
+
+.widget-github-repos {
+  background-color: $background-color; // Default
+
+  h3.prs-count {
+    font-size: 76px;
+  }
+
+  .issues, .watchers {
+    color: $aux-info-color;
+  }
+
+  .moreinfo {
+    color: $moreinfo-color;
+  }
+
+  .updated-at {
+    color: $updated-at-color;
+  }
+
+  .url {
+    font-size: 14px;
+  }
+}

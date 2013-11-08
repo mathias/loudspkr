@@ -12,6 +12,9 @@ gem 'omniauth-google-apps'
 ## Twitter widget:
 gem 'twitter'
 
+## Github widget:
+gem 'octokit'
+
 ## GitHub Status widget:
 gem 'httparty'
 

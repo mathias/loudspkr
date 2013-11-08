@@ -4,7 +4,6 @@ class Dashing.DaysSinceLastPost extends Dashing.Widget
     # This is fired when the widget is done being rendered
 
   onData: (data) ->
-    console.log data
     @setDaysAgo(data.updated_at)
     @updateBg(data.updated_at)
 
@@ -14,9 +13,7 @@ class Dashing.DaysSinceLastPost extends Dashing.Widget
       @set('daysAgo', daysAgo)
 
   updateBg: (updatedAt) ->
-    console.log updatedAt
     difference_in_days = moment().diff(updatedAt, 'days')
-    console.log difference_in_days
 
     if difference_in_days > 7
       @set 'overdue_bg', 'overdue'
