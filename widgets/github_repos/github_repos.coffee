@@ -7,17 +7,17 @@ class Dashing.GithubRepos extends Dashing.Widget
 
   onData: (data) ->
     @currentIndex = 0
-    @set('repo', repos[@currentIndex])
+    @set('repo', @get('repos')[@currentIndex])
 
   startCarousel: ->
     interval = $(@node).attr('data-interval')
-    interval = "20" if not interval
+    interval = "30" if not interval
     setInterval(@nextRepo, parseInt( interval ) * 1000)
 
   nextRepo: =>
     repos = @get('repos')
 
-    if repos
+    if repos?
       @containerEl.fadeOut =>
         @currentIndex = (@currentIndex + 1) % repos.length
         repo = repos[@currentIndex]
