@@ -20,11 +20,14 @@ SCHEDULER.every '5m', :first_in => 0 do
 
   #Get foursquare data
   foursq_data = client.venue(venue_id)
+  foursq_checkins = foursq_data['stats']['checkinsCount']
+  foursq_mayor = [foursq_data['mayor']['user']['firstName'], foursq_data['mayor']['user']['lastName']].join ' '
 
   likes = {
     fb_name: fb_name,
     fb_likes: fb_likes,
-    foursq_checkins: foursq_data['stats']['checkinsCount']
+    foursq_checkins: foursq_checkins,
+    foursq_mayor: foursq_mayor
   }
 
   send_event('likes', likes)

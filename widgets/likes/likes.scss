@@ -1,4 +1,4 @@
-$background-color: #D0A825;
+$background-color: #ff9618;
 $title-color:       rgba(255, 255, 255, 0.7);
 $label-color:       rgba(255, 255, 255, 0.7);
 $moreinfo-color:    rgba(255, 255, 255, 0.7);
@@ -9,17 +9,34 @@ $moreinfo-color:    rgba(255, 255, 255, 0.7);
 
   .title {
     color: $title-color;
+    font-size: 16px;
   }
 
   ul {
     list-style: none;
-    text-align: left;
-    font-size: 32px;
 
-    .value {
-      display: block;
-      float: right;
+    li {
+      text-align: center;
+      margin-bottom: 10px;
+
+      .label {
+        font-size: 25px;
+        display: block;
+        color: $title-color;
+        text-transform: uppercase;
+      }
+
+      .value {
+        font-size: 55px;
+        font-weight: bold;
+        display: block;
+      }
     }
+
+  }
+
+  h3 {
+    color: $title-color;
   }
 
 }
