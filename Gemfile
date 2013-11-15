@@ -31,6 +31,9 @@ gem 'sms_my_bus'
 ## Trello widget
 gem 'ruby-trello'
 
+## Foursquare widget:
+gem 'foursquare2'
+
 ### development niceties ###
 gem 'dotenv'
 gem 'pry'

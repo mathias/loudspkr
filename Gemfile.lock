@@ -46,6 +46,10 @@ GEM
     faraday_middleware (0.9.0)
       faraday (>= 0.7.4, < 0.9)
     ffi (1.9.3)
+    foursquare2 (1.9.8)
+      faraday (~> 0.8)
+      faraday_middleware (>= 0.8)
+      hashie (>= 1.0, < 3.0.0)
     gh (0.13.0)
       addressable
       backports
@@ -179,6 +183,7 @@ PLATFORMS
 DEPENDENCIES
   dashing
   dotenv
+  foursquare2
   htmlentities
   httparty
   nokogiri
