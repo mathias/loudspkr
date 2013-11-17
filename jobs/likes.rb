@@ -24,10 +24,10 @@ SCHEDULER.every '5m', :first_in => 0 do
   foursq_mayor = [foursq_data['mayor']['user']['firstName'], foursq_data['mayor']['user']['lastName']].join ' '
 
   likes = {
-    fb_name: fb_name,
-    fb_likes: fb_likes,
-    foursq_checkins: foursq_checkins,
-    foursq_mayor: foursq_mayor
+    fb_name: fb_name || '',
+    fb_likes: fb_likes || 0,
+    foursq_checkins: foursq_checkins || 0,
+    foursq_mayor: foursq_mayor || ''
   }
 
   send_event('likes', likes)
