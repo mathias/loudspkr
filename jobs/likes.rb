@@ -5,9 +5,11 @@ require 'json'
 require 'dotenv'
 Dotenv.load
 
-venue_id = URI::encode(ENV['FOURSQUARE_VENUE_ID'])
+venue_id = ENV['FOURSQUARE_VENUE_ID']
 oauth_token = ENV['FOURSQUARE_CONSUMER_SECRET']
 graph_uri = ENV['FACEBOOK_PAGE_URI']
+
+raise "Need Facebook and Foursquare keys in ENV!" unless venue_id && oauth_token && graph_uri
 
 client = Foursquare2::Client.new(:oauth_token => oauth_token)
 
