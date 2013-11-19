@@ -1,4 +1,4 @@
-require 'net/http'
+require 'faraday'
 require 'uri'
 require 'nokogiri'
 require 'htmlentities'
@@ -12,10 +12,7 @@ Decoder = HTMLEntities.new
 class News
   def initialize(widget_id, feed)
     @widget_id = widget_id
-    # pick apart feed into domain and path
-    uri = URI.parse(feed)
-    @path = uri.path
-    @http = Net::HTTP.new(uri.host)
+    @uri = URI.parse(feed)
   end
 
   def widget_id
@@ -23,7 +20,7 @@ class News
   end
 
   def latest_headlines
-    response = @http.request(Net::HTTP::Get.new(@path))
+    response = Faraday.get(@uri)
     doc = Nokogiri::XML(response.body).children.first
 
     news_headlines = [];
