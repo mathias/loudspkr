@@ -1,13 +1,9 @@
-require 'net/http'
+require 'faraday'
 require 'json'
 
 SCHEDULER.every '5m', :first_in => '5s' do |job|
   uri = URI.parse("https://status.heroku.com/api/v3/current-status")
-  http = Net::HTTP.new(uri.host, uri.port)
-  http.use_ssl = true
-  request = Net::HTTP::Get.new(uri.request_uri)
-  response = http.request(request)
-
+  response = Faraday.get(uri)
   status = JSON.parse(response.body)
 
   prod_status = status['status']['Production']
