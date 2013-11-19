@@ -1,5 +1,5 @@
 require 'foursquare2'
-require 'httparty'
+require 'faraday'
 require 'json'
 
 require 'dotenv'
@@ -14,9 +14,9 @@ raise "Need Facebook and Foursquare keys in ENV!" unless venue_id && oauth_token
 client = Foursquare2::Client.new(:oauth_token => oauth_token)
 
 SCHEDULER.every '5m', :first_in => 0 do
-  response = HTTParty.get(graph_uri).parsed_response
+  response = Faraday.get(graph_uri)
 
-  fb_data = JSON.parse(response)
+  fb_data = JSON.parse(response.body)
   fb_likes = fb_data['likes']
   fb_name = fb_data['name']
 
