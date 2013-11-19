@@ -55,17 +55,17 @@ class News
 
 end
 
-@News = []
+@news = []
 news_feeds.each do |widget_id, feed|
   begin
-    @News.push(News.new(widget_id, feed))
+    @news.push(News.new(widget_id, feed))
   rescue Exception => e
     puts e.to_s
   end
 end
 
 SCHEDULER.every '5m', :first_in => 0 do |job|
-  @News.each do |news|
+  @news.each do |news|
     headlines = news.latest_headlines()
     send_event(news.widget_id, { :headlines => headlines })
     send_event('days_since_last_post', news.last_blog_post)
