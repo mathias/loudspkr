@@ -1,5 +1,5 @@
 require 'date'
-require 'net/https'
+require 'faraday'
 require 'json'
 
 require 'dotenv'
@@ -32,10 +32,10 @@ def day_to_str(time_obj)
 end
 
 SCHEDULER.every '10m', :first_in => 0 do |job|
-  http = Net::HTTP.new("api.forecast.io", 443)
-  http.use_ssl = true
-  http.verify_mode = OpenSSL::SSL::VERIFY_PEER
-  response = http.request(Net::HTTP::Get.new("/forecast/#{forecast_api_key}/#{forecast_location_lat},#{forecast_location_long}?units=#{forecast_units}"))
+  uri = "https://api.forecast.io/" +
+    "forecast/#{forecast_api_key}/#{forecast_location_lat},#{forecast_location_long}?units=#{forecast_units}"
+
+  response = Faraday.get(uri)
   forecast = JSON.parse(response.body)
 
   raise "Forecast.io: " + forecast["error"] if forecast.has_key?("error")
