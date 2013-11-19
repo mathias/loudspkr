@@ -14,7 +14,8 @@ configure do
     end
   end
 
-  use Rack::Session::Cookie
+  fail "Must provide Rack::Session::Cookie in ENV!"  unless ENV['RACK_SECRET']
+  use Rack::Session::Cookie, secret: ENV['RACK_SECRET']
   use OmniAuth::Builder do
     provider :google_apps, :store => OpenID::Store::Filesystem.new('./tmp'), :name => 'g', :domain => ENV['GOOGLE_DOMAIN']
   end
