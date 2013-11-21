@@ -23,8 +23,10 @@ class Dashing.GithubRepos extends Dashing.Widget
         repo = repos[@currentIndex]
         @set('repo', repo)
 
-        if repo.pull_requests.length > 0
+        if repo.pull_requests > 0
           $(@node).css('background-color', '#A6C700')
+        else if repo.issues > 0
+          $(@node).css('background-color', '#E3CA09')
         else
           $(@node).css('background-color', '#DB000F')
 
