@@ -50,7 +50,7 @@ class News
   end
 
   def last_blog_post
-    last_post = latest_headlines.first
+    latest_headlines.first || ''
   end
 
 end
@@ -63,11 +63,12 @@ news_feeds.each do |widget_id, feed|
     puts e.to_s
   end
 end
+@news.compact!
 
 SCHEDULER.every '5m', :first_in => 0 do |job|
   @news.each do |news|
     headlines = news.latest_headlines()
-    send_event(news.widget_id, { :headlines => headlines })
+    send_event(news.widget_id, { :headlines => headlines || [] })
     send_event('days_since_last_post', news.last_blog_post)
   end
 
