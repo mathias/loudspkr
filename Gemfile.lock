@@ -28,6 +28,7 @@ GEM
       sprockets
       thin
       thor
+    dotenv (0.9.0)
     ethon (0.6.1)
       ffi (>= 1.3.0)
       mime-types (~> 1.18)
@@ -167,6 +168,7 @@ PLATFORMS
 
 DEPENDENCIES
   dashing
+  dotenv
   foursquare2
   htmlentities
   nokogiri
