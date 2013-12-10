@@ -32,6 +32,6 @@ gem 'ruby-trello'
 gem 'foursquare2'
 
 ### development niceties ###
-gem 'dotenv'
-gem 'pry'
-gem 'pry-debugger'
+#gem 'dotenv'
+#gem 'pry'
+#gem 'pry-debugger'
