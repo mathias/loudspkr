@@ -9,9 +9,9 @@ SCHEDULER.every '5m', :first_in => 0 do |job|
   response = Faraday.get @uri
   json = JSON.parse(response.body)
 
-  stations = json['d']['list']
+  station_list = json['d']['list']
 
-  stations = stations.map do |row|
+  stations = station_list.map do |row|
     row = {
       :id => row['Id'],
       :name => row['Name'],
