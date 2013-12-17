@@ -11,6 +11,8 @@ SCHEDULER.every '5m', :first_in => 0 do |job|
 
   station_list = json['d']['list']
 
+  # TODO: Add filtering for only the stations we care about
+
   stations = station_list.map do |row|
     row = {
       :id => row['Id'],
