@@ -29,6 +29,9 @@ class Dashing.GithubRepos extends Dashing.Widget
         if pull_requests > 0
           $(@node).css('background-color', '#DB000F') # RED
           alert = "ALL HANDS ON DECK. OUTSTANDING PULL REQUESTS."
+        else if repo.status == "not found"
+          $(@node).css('background-color', '#DB000F') # RED
+          alert = "404 REPO NOT FOUND."
         else if issues > 0
           $(@node).css('background-color', '#E3CA09') # YELLOW
           alert = "YELLOW ALERT. ISSUES DETECTED."

@@ -23,16 +23,24 @@ SCHEDULER.every '5m', :first_in => 0 do |job|
   client = Octokit::Client.new :access_token => @github_token
 
   repos = @repos.map do |repo_name|
-    repo = client.repository(repo_name)
-    pull_requests =  client.pull_requests(repo_name, options: {state: 'open'}).count
+    begin
+      repo = client.repository(repo_name)
+      pull_requests =  client.pull_requests(repo_name, options: {state: 'open'}).count
 
-    {
-      name: repo.full_name,
-      watchers: repo.watchers,
-      issues: repo.open_issues_count,
-      pull_requests: pull_requests,
-      url: repo.homepage
-    }
+      {
+        name: repo.full_name,
+        watchers: repo.watchers,
+        issues: repo.open_issues_count,
+        pull_requests: pull_requests,
+        url: repo.homepage
+      }
+    rescue
+      # handle repo not found safely
+      {
+        name: repo_name,
+        status: "not found"
+      }
+    end
   end
 
   send_event('github_repos', { repos: repos })
