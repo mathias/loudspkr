@@ -2,19 +2,12 @@
 
 <img width="300" height="300" src="/assets/travis-mascot-600px.png" data-addclass-ok="item.state">
 
-<ol>
-  <li data-foreach-item="items">
-    <span class="label" data-bind="item.label"></span>
-    <span class="value" data-bind="item.value"></span>
-  </li>
-</ol>
+<div class="repo-container">
+  <h1 class="repo-name" data-bind="repo.name | truncate 140 | raw"></h1>
 
-<ul class="list-nostyle">
-  <li data-foreach-item="items">
-    <span class="label" data-bind="item.label"></span>
-    <span class="value" data-bind="item.value"></span>
-  </li>
-</ul>
+  <h3 class="build-num"><span data-bind="repo.label"></span></h3>
+  <div class="build-status"><span data-bind="repo.value"></span></div>
 
-<p class="more-info" data-bind="moreinfo"></p>
-<p class="updated-at" data-bind="updatedAtMessage"></p>
+  <p class="more-info" data-bind="moreinfo"></p>
+  <p class="updated-at" data-bind="updatedAtMessage"></p>
+</div>
